@@ -1,0 +1,809 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800;900&family=DM+Sans:wght@400;500;600;700&family=Special+Elite&display=swap');
+
+:root {
+    --bg: #0b0a16;
+    --panel: #14131f;
+    --pink: #fa398c;
+    --mint: #60e1c5;
+    --yellow: #f3ca61;
+    --paper: #efe3c4;
+    --ink: #29252c;
+    --muted: #aaa6b7;
+    --line: #302c3e;
+    --display: 'Barlow Condensed', sans-serif;
+    --type:'DM Sans', monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: #f0ecdf;
+    background: var(--bg);
+    border-top: 3px solid var(--pink);
+    min-height: 100vh;
+}
+
+button {
+    font: inherit;
+    color: inherit;
+    background: none;
+    border: 0;
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+:focus-visible {
+    outline: 2px solid var(--mint);
+    outline-offset: 4px;
+}
+
+svg.i {
+    width: 1em;
+    height: 1em;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    vertical-align: -.15em;
+}
+
+.wrap {
+    max-width: 1216px;
+    width: calc(100% - 48px);
+    margin: auto;
+    padding: 30px 0 27px;
+}
+
+/* ==================== TOPO & LOGO ==================== */
+.top {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--line);
+}
+
+.logo {
+    font: 900 22px var(--display);
+    letter-spacing: 1.5px;
+    color: #fff5e1;
+    text-shadow: 0 0 12px #fa398c90;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.logo .i {
+    color: var(--pink);
+}
+
+.top small {
+    font: 10px var(--type);
+    letter-spacing: 1px;
+    color: var(--muted);
+    padding-left: 20px;
+    border-left: 1px solid var(--line);
+}
+
+.bag {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #62576b;
+    padding: 10px 13px;
+    font: 11px var(--type);
+    transition: all 0.2s;
+}
+
+.bag:hover {
+    border-color: var(--pink);
+    background: #231725;
+}
+
+.bag b {
+    display: grid;
+    place-items: center;
+    width: 23px;
+    height: 23px;
+    background: var(--pink);
+    color: var(--bg);
+    font: 700 11px 'DM Sans';
+}
+
+/* ==================== HERO ==================== */
+.hero {
+    text-align: center;
+    padding: 39px 0 25px;
+}
+
+.tag {
+    font: 9px var(--type);
+    letter-spacing: 1.8px;
+    color: var(--mint);
+}
+
+.tag::before {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    margin-right: 8px;
+    border-radius: 50%;
+    background: var(--mint);
+    box-shadow: 0 0 9px var(--mint);
+}
+
+h1 {
+    position: relative;
+    display: inline-block;
+    font: 800 clamp(48px, 10vw, 82px)/1 var(--display);
+    letter-spacing: -1.5px;
+    margin: 13px 0 18px;
+    color: var(--pink);
+    text-shadow: 3px 3px 0 #64345d;
+}
+
+h1 span {
+    color: var(--yellow);
+    text-shadow: 3px 3px 0 #7c314d;
+}
+
+h1 .i {
+    position: absolute;
+    right: -58px;
+    top: 3px;
+    font-size: 40px;
+    color: var(--mint);
+    transform: rotate(12deg);
+}
+
+.hero p {
+    font-size: 13px;
+    line-height: 1.9;
+    color: #bbb7c7;
+}
+
+.hero strong {
+    font-weight: 500;
+    color: #e6e1ed;
+}
+
+/* ==================== GUIA DA SALA DE CINEMA ==================== */
+.sala-regras {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin: 20px 0 35px;
+    padding: 20px 22px;
+    border: 1px dashed var(--line);
+    background: #151322;
+}
+
+.sala-regras div {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.sala-regras h4 {
+    font: 700 15px var(--display);
+    letter-spacing: 1px;
+    color: var(--mint);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sala-regras h4 .i {
+    color: var(--pink);
+}
+
+.sala-regras p {
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+.sala-regras strong {
+    color: var(--yellow);
+    font-weight: 600;
+}
+
+/* ==================== SEÇÃO COMBOS ==================== */
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 30px 0 24px;
+}
+
+.head h2 {
+    font: 700 24px var(--display);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.head span {
+    font: 9px var(--type);
+    letter-spacing: .8px;
+    color: var(--muted);
+}
+
+.combos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 26px;
+}
+
+.combo {
+    position: relative;
+    color: var(--ink);
+    background: var(--paper);
+    border: 1px solid #e7dcb9;
+    box-shadow: 5px 5px 0 #0004;
+    display: flex;
+    flex-direction: column;
+}
+
+.yellow { --a: #f3ca61; }
+.pink { --a: #f49ba9; }
+.mint { --a: #8aead0; }
+
+.tape {
+    position: absolute;
+    top: -11px;
+    left: calc(50% - 36px);
+    width: 73px;
+    height: 22px;
+    z-index: 2;
+    transform: rotate(-3deg);
+    background: #eeeedd88;
+    border: 1px solid #f5f2d855;
+}
+
+.art {
+    position: relative;
+    height: 204px;
+    overflow: hidden;
+    background: #1c1b29 radial-gradient(#c3b8d318 .7px, transparent .7px) 0 0/9px 9px;
+    color: var(--a);
+}
+
+.art img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.art .n {
+    position: absolute;
+    top: 19px;
+    left: 17px;
+    font: 8px var(--type);
+    letter-spacing: 1px;
+    background: #0009;
+    color: #fff;
+    padding: 3px 6px;
+}
+
+.art .off {
+    position: absolute;
+    top: 19px;
+    right: 15px;
+    z-index: 1;
+    padding: 9px 10px 7px;
+    font: 7px var(--type);
+    color: var(--ink);
+    background: var(--a);
+    transform: rotate(8deg);
+    box-shadow: 2px 2px 0 #0006;
+}
+
+.art .off b {
+    display: block;
+    text-align: center;
+    font: 800 21px var(--display);
+}
+
+.body {
+    padding: 21px 22px 22px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.lbl {
+    display: inline-block;
+    padding: 5px 6px 3px;
+    background: var(--a);
+    font-size: 11px;          
+    font-weight: 700;
+    font: 8px var(--type);
+    width: fit-content;
+}
+
+.body h3 {
+    font: 800 36px/1.05 var(--display);
+    margin: 9px 0 7px;
+}
+
+.tagline {
+    font-size: 11px;
+    color: #6f655c;
+}
+
+.incl {
+    list-style: none;
+    display: grid;
+    gap: 9px;
+    margin: 19px 0 18px;
+    padding: 16px 0;
+    border-block: 1px dashed #b6ab93;
+    font-size: 11px;
+    flex: 1;
+}
+
+.incl li {
+    display: flex;
+    align-items: center;
+}
+
+.incl .i {
+    color: #577361;
+    margin-right: 6px;
+    flex-shrink: 0;
+}
+
+.body label {
+    display: block;
+    margin-bottom: 7px;
+    font: 8px var(--type);
+    letter-spacing: .7px;
+}
+
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bcb299;
+    border-radius: 0;
+    background: #f7edd4;
+    color: var(--ink);
+    font-size: 11px;
+    font-family: monospace;
+    margin-bottom: 8px;
+}
+
+.price {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin: 17px 0 14px;
+}
+
+.price s {
+    font-size: 10px;
+    color: #847867;
+}
+
+.price strong {
+    display: block;
+    font: 800 34px var(--display);
+}
+
+.price em {
+    font: normal 10px var(--type);
+    color: #5c6d4c;
+}
+
+.add {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 13px 12px;
+    background: #b13835;
+    color: #fff6df;
+    box-shadow: 3px 3px 0 #462321;
+    font: 700 15px var(--display);
+    letter-spacing: .7px;
+    transition: background .2s;
+}
+
+.add:hover {
+    background: #972b29;
+}
+
+/* ==================== EXTRAS / BOMBONIERE ==================== */
+.extras {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 45px 0 21px;
+}
+
+.extras h2 {
+    font: 700 34px var(--display);
+}
+
+.extras h2 span {
+    color: var(--pink);
+}
+
+.extras small {
+    font: 8px var(--type);
+    letter-spacing: 1px;
+    color: var(--mint);
+}
+
+.extras p {
+    font-size: 11px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+.snacks {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+}
+
+.snack {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px;
+    border: 1px solid var(--line);
+    background: var(--panel);
+}
+
+.snack .pic {
+    flex: none;
+    width: 75px;
+    height: 86px;
+    background: #262031;
+}
+
+.snack .pic svg {
+    width: 100%;
+    height: 100%;
+}
+
+.snack div {
+    flex: 1;
+}
+
+.snack small {
+    font: 7px var(--type);
+    color: var(--mint);
+}
+
+.snack h3 {
+    font-size: 12px;
+    font-weight: 600;
+    margin: 5px 0 4px;
+}
+
+.snack p {
+    font-size: 9px;
+    color: #928b9e;
+}
+
+.snack .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 9px;
+}
+
+.snack strong {
+    font-size: 13px;
+    color: var(--yellow);
+}
+
+.snack button {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border: 1px solid #575062;
+    color: var(--pink);
+    transition: all .2s;
+}
+
+.snack button:hover {
+    background: var(--pink);
+    color: var(--bg);
+}
+
+.foot {
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    text-align: center;
+    font: 9px var(--type);
+    color: var(--pink);
+    letter-spacing: 1px;
+}
+
+/* ==================== CARRINHO (GAVETA LATERAL) ==================== */
+dialog {
+    position: fixed;
+    inset: 0 0 0 auto;
+    margin: 0;
+    width: 480px;
+    max-width: 100%;
+    height: 100dvh;
+    max-height: 100dvh;
+    padding: 26px;
+    border: 0;
+    border-left: 1px solid #514454;
+    color: #eee9dc;
+    background: var(--bg);
+}
+
+dialog::backdrop {
+    background: #05030bb3;
+    backdrop-filter: blur(4px);
+}
+
+dialog[open] {
+    display: flex;
+    flex-direction: column;
+}
+
+.dh {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--line);
+}
+
+.dh h2 {
+    font: 700 33px var(--display);
+    color: var(--yellow);
+}
+
+#items {
+    flex: 1;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.item h4 {
+    font-size: 14px;
+}
+
+.item p {
+    font-size: 11px;
+    color: var(--muted);
+    margin: 4px 0 6px;
+}
+
+.item strong {
+    color: var(--yellow);
+    font-size: 13px;
+}
+
+.qty {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    margin-top: 10px;
+    border: 1px solid #504854;
+}
+
+.qty button {
+    padding: 6px;
+    display: flex;
+}
+
+.qty span {
+    min-width: 27px;
+    text-align: center;
+    font-size: 11px;
+}
+
+.empty {
+    padding: 60px 10px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.sum {
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+}
+
+.sum div {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sum .sv {
+    color: var(--mint);
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.sum .tt {
+    font-size: 18px;
+    margin-bottom: 18px;
+}
+
+.sum .tt strong {
+    color: var(--yellow);
+}
+
+.go {
+    width: 100%;
+    padding: 14px 13px;
+    background: var(--pink);
+    color: var(--bg);
+    font: 700 16px var(--display);
+    letter-spacing: .5px;
+    transition: background .2s;
+}
+
+.go:hover {
+    background: #ff66a6;
+}
+
+/* ==================== CUPOM FISCAL TÉRMICO ==================== */
+.cupom-fiscal {
+    background: #fffbe8;
+    color: #110e0c;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 22px 18px;
+    width: 100%;
+    margin: 10px 0;
+    border-top: 4px dashed #666;
+    border-bottom: 4px dashed #666;
+    box-shadow: 0 0 20px rgba(0,0,0,0.6);
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.cupom-fiscal .topo-fiscal {
+    text-align: center;
+    border-bottom: 1px dashed #444;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.cupom-fiscal h3 {
+    font-size: 16px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 2px;
+}
+
+.cupom-tabela {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+.cupom-tabela th {
+    border-bottom: 1px solid #111;
+    text-align: left;
+    font-size: 10px;
+    padding-bottom: 4px;
+}
+
+.cupom-tabela td {
+    padding: 6px 0;
+    vertical-align: top;
+}
+
+.cupom-totais {
+    border-top: 1px dashed #222;
+    padding-top: 8px;
+    margin-top: 6px;
+}
+
+.cupom-linha {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+
+.cupom-linha.destaque {
+    font-size: 14px;
+    font-weight: bold;
+    border-top: 1px solid #111;
+    border-bottom: 1px solid #111;
+    padding: 4px 0;
+    margin: 6px 0;
+}
+
+.cupom-rodape {
+    text-align: center;
+    border-top: 1px dashed #666;
+    padding-top: 10px;
+    margin-top: 10px;
+    font-size: 10px;
+    color: #444;
+}
+
+.btn-imprimir {
+    background: #110e0c;
+    color: #fffbe8;
+    border: 1px solid #110e0c;
+    width: 100%;
+    padding: 10px;
+    font-family: var(--type);
+    font-size: 11px;
+    cursor: pointer;
+    margin-top: 14px;
+    transition: all .2s;
+}
+
+.btn-imprimir:hover {
+    background: var(--pink);
+    color: var(--bg);
+}
+
+/* ==================== TOAST ==================== */
+.toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    padding: 14px 18px;
+    border: 1px solid var(--mint);
+    background: #1a2926;
+    color: #dbf3e9;
+    font-size: 12px;
+    font-family: var(--type);
+}
+
+.toast[hidden] {
+    display: none;
+}
+
+/* ==================== RESPONSIVIDADE ==================== */
+@media(max-width:700px) {
+    .top small {
+        display: none;
+    }
+
+    h1 .i {
+        display: none;
+    }
+
+    .snack {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    dialog {
+        width: 100%;
+    }
+}

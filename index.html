@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rebobina Vegas — Locadora & Caça-Filmes</title>
+
+  <!-- Pré-conecta aos servidores do Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Arvo:ital,wght@0,400;0,700;1,400&family=Special+Elite&family=Bungee&family=VT323&display=swap" rel="stylesheet">
+  
+  <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+  <!-- ===================== MENU PRINCIPAL ===================== -->
+  <header>
+    <nav id="menu-h">
+      <div class="wrap menu-inner">
+        <span class="menu-logo">REBOBINA</span>
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#cinema-vip">Sala VIP</a></li>
+          <li><a href="#categorias">Categorias</a></li>
+          <li><a href="#atendente">Atendente</a></li>
+          <li><a href="#avaliacoes">Avaliações</a></li>
+          <li><a href="#reserva">Reserva</a></li>
+          <li><a href="#salinha-restrita" class="menu-adult">+18</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===================== HERO SECTION ===================== -->
+  <section class="hero" id="inicio">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="stub" style="color: var(--neon-cyan);">LOCADORA ONLINE & CASSINO DE FITAS</span>
+        <h1 class="vegas-sign">REBOBINA</h1>
+        <p class="lead">Aperte o play na sorte. Gire a alavanca do nosso caça-filmes e descubra o que vai assistir hoje, sem horas de indecisão.</p>
+      </div>
+
+      <!-- MÁQUINA CAÇA-NÍQUEL VIA JAVASCRIPT -->
+      <div class="machine-wrap">
+        <div class="machine">
+          <div class="bulbs">
+            <div class="bulb"></div><div class="bulb"></div><div class="bulb"></div><div class="bulb"></div>
+            <div class="bulb"></div><div class="bulb"></div><div class="bulb"></div><div class="bulb"></div>
+          </div>
+          <div class="machine-title">CAÇA-FILME 3000</div>
+
+          <div class="reels">
+            <div class="reel"><div class="reel-strip" id="strip0"></div></div>
+            <div class="reel"><div class="reel-strip" id="strip1"></div></div>
+            <div class="reel"><div class="reel-strip" id="strip2"></div></div>
+            
+            <div class="lever-area">
+              <div class="lever-knob" id="leverKnob"></div>
+              <div class="lever-track"></div>
+            </div>
+          </div>
+          
+          <button type="button" id="btnSpin" class="spin-btn">PUXAR A ALAVANCA</button>
+
+          <div class="result" id="resultBox">
+            <span class="placeholder">> Insira uma ficha (clique acima)...</span>
+            <span class="revealed" id="revealedContent" style="display:none;"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SEÇÃO: SALA DE CINEMA PRIVADA ===================== -->
+  <section class="cinema-portal-section" id="cinema-vip">
+    <div class="wrap">
+      <div class="cinema-card">
+        <div class="cinema-img-wrapper">
+          <img src="sala_retro.png" alt="Sala de Cinema Rebobina" class="cinema-img">
+          <div class="cinema-badge">EXCLUSIVO</div>
+        </div>
+        <div class="cinema-info">
+          <span class="stub" style="color: var(--neon-pink);">SESSÃO ESPECIAL</span>
+          <h2>CONHEÇA NOSSA SALA DE CINEMA</h2>
+          <p>Quer assistir aos lançamentos e clássicos com qualidade máxima de projeção analógica e poltronas reclináveis? Reserve agora sua sessão particular na nossa sala imersiva.</p>
+          <a href="new_page.html" class="btn-cinema-action">
+            <span>ENTRAR NA SALA DE PROJEÇÃO</span>
+            <span class="cinema-arrow">➔</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PRATELEIRA DE CLÁSSICOS ===================== -->
+  <section class="film-section" id="categorias">
+    <div class="wrap section-head">
+      <h2>Prateleira de Clássicos</h2>
+      <p class="stub" style="color: #888;">Gire o rolo para ver as fitas que não saem das prateleiras.</p>
+    </div>
+
+    <div class="wrap genre-menu">
+      <button type="button" class="genre-btn active" data-filter="todos">Todos</button>
+      <button type="button" class="genre-btn" data-filter="terror">Terror</button>
+      <button type="button" class="genre-btn" data-filter="ficcao">Ficção</button>
+      <button type="button" class="genre-btn" data-filter="acao">Ação</button>
+      <button type="button" class="genre-btn" data-filter="comedia">Comédia</button>
+      <button type="button" class="genre-btn" data-filter="romance">Romance</button>
+      <button type="button" class="genre-btn" data-filter="drama">Drama</button>
+    </div>
+
+    <div class="film-roll">
+      <div class="film-frame" data-genre="terror">
+        <img src="images/psicose.png" alt="Psicose" onerror="this.style.background='#4a0000'">
+        <span class="genre">TERROR</span>
+        <h4>PSICOSE</h4>
+      </div>
+      <div class="film-frame" data-genre="ficcao">
+        <img src="images/alien.png" alt="Alien" onerror="this.style.background='#00224a'">
+        <span class="genre">FICÇÃO</span>
+        <h4>Alien</h4>
+      </div>
+      <div class="film-frame" data-genre="acao">
+        <img src="images/rei.png" alt="O Rei Leão" onerror="this.style.background='#4a3a00'">
+        <span class="genre">Ação</span>
+        <h4>O Rei Leão</h4>
+      </div>
+      <div class="film-frame" data-genre="comedia">
+        <img src="images/curtindo.png" alt="Curtindo a Vida Adoidado" onerror="this.style.background='#004a18'">
+        <span class="genre">COMÉDIA</span>
+        <h4>Curtindo a vida adoidado</h4>
+      </div>
+      <div class="film-frame" data-genre="romance">
+        <img src="images/titanic.png" alt="Titanic" onerror="this.style.background='#4a0040'">
+        <span class="genre">ROMANCE</span>
+        <h4>Titanic</h4>
+      </div>
+      <div class="film-frame" data-genre="drama">
+        <img src="images/lista.png.png" alt="A Lista de Schindler" onerror="this.style.background='#222'">
+        <span class="genre">DRAMA</span>
+        <h4>A Lista de Schindler</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SUGESTÃO DO ATENDENTE ===================== -->
+  <section class="counter-section" id="atendente">
+    <div class="wrap counter-grid">
+      <div class="tv">
+        <div class="tv-screen">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/aLXW-oVbTxE?si=v4-e_dQC2b9LbhBv" 
+            title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; 
+            encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="tv-knobs">
+          <div></div><div></div><div></div>
+        </div>
+      </div>
+
+      <div class="pick-text">
+        <span class="stub" style="background: var(--neon-cyan); color: #000; padding: 2px 8px; font-weight: bold;">
+          ESCOLHA DO ATENDENTE
+        </span>
+        <h3 class="display" style="margin-top: 15px;">Possessão (1981)</h3>
+        <p>Um terror psicológico intenso sobre um casal em crise, marcado por conflitos, estranheza e acontecimentos cada vez mais perturbadores.</p>
+        <p class="crt" style="color: var(--neon-pink);">> rebobine antes de devolver, por favor.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== AVALIAÇÕES ===================== -->
+  <section class="reviews" id="avaliacoes">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 style="color: var(--mustard);">Mural de Recados</h2>
+      </div>
+      <div class="review-grid">
+        <div class="post-it">
+          <p>"Filmaço! A cena do carro me deixou sem fôlego. Vale cada centavo do aluguel."</p>
+          <b>- Marina T.</b>
+        </div>
+        <div class="post-it">
+          <p>"Deixei a alavanca escolher pra mim. Nunca ri tanto num domingo à noite."</p>
+          <b>- Diego R.</b>
+        </div>
+        <div class="post-it">
+          <p>"Fita tava meio mastigada no começo, mas a história compensou 100%."</p>
+          <b>- Bia F.</b>
+        </div>
+        <div class="post-it">
+          <p>"Assisti 3 vezes antes de devolver. Desculpa o atraso, Rebobina!"</p>
+          <b>- Cauã M.</b>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== FORMULÁRIO DE RESERVA ===================== -->
+  <section class="reservation" id="reserva">
+    <div class="wrap">
+      <div class="reservation-wrap">
+        <h2>FICHA DE LOCAÇÃO & ENVIO</h2>
+        <p class="res-instructions">Preencha seus dados para receber a fita por correspondência.</p>
+        
+        <form action="#" method="POST" id="formLocacao">
+          <div class="form-group">
+            <label>NOME COMPLETO:</label>
+            <input type="text" required placeholder="Fulano de Tal">
+          </div>
+          <div class="form-group">
+            <label>ENDEREÇO DE ENTREGA (COM CEP):</label>
+            <textarea rows="2" required placeholder="Rua das Fitas, 123..."></textarea>
+          </div>
+          <div class="form-group">
+            <label>FITA ESCOLHIDA:</label>
+            <input type="text" id="campoFita" required placeholder="Ex: Fronteira 88">
+          </div>
+          
+          <div class="deposit-info">
+            <strong>INSTRUÇÕES DE PAGAMENTO:</strong><br>
+            Faça um depósito de <strong>R$ 15,00</strong> no Banco de Fitas S/A (Ag: 0099 | CC: 12345-6).
+          </div>
+          
+          <button type="submit" class="btn-submit">SOLICITAR FITA</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== SALA RESTRITA ===================== -->
+  <section class="adult-room" id="salinha-restrita">
+    <a href="https://www.galinhapintadinha.com.br/" target="_blank" rel="noopener noreferrer" class="door">
+      <h3>SALA RESTRITA</h3>
+      <p>Proibida a entrada de menores de 18 anos.<br>Clique por sua conta e risco.</p>
+    </a>
+  </section>
+
+  <!-- ===================== RODAPÉ ===================== -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-brand">
+        <h3>REBOBINA</h3>
+        <p>Locadora Online & Caça-Filmes</p>
+      </div>
+      <div class="footer-info">
+        <p><strong>CNPJ:</strong> 00.000.000/0001-00</p>
+        <p>Rua das Fitas, 123 — Centro</p>
+        <p>Florianópolis — SC</p>
+      </div>
+      <div class="footer-contact">
+        <p><strong>CONTATO</strong></p>
+        <p>📞 (48) 99999-9999</p>
+        <p>✉ contato@rebobina.com.br</p>
+      </div>
+      <div class="footer-social">
+        <p><strong>SIGA A REBOBINA</strong></p>
+        <div class="social-icons">
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Facebook">f</a>
+          <a href="#" aria-label="TikTok">♪</a>
+          <a href="#" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Rebobina — Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
